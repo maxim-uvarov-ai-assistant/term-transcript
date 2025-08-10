@@ -1,6 +1,6 @@
 use std::{borrow::Cow, fmt::Write as WriteStr};
 
-use termcolor::NoColor;
+use termcolor::{NoColor, WriteColor};
 
 #[cfg(feature = "svg")]
 use crate::write::{SvgLine, SvgWriter};
@@ -46,7 +46,9 @@ impl Captured {
         wrap_width: Option<usize>,
     ) -> Result<(), TermError> {
         let mut html_writer = HtmlWriter::new(output, wrap_width);
-        TermOutputParser::new(&mut html_writer).parse(self.0.as_bytes())
+        TermOutputParser::new(&mut html_writer).parse(self.0.as_bytes())?;
+        // Ensure any open HTML tags are closed
+        html_writer.reset().map_err(TermError::Io)
     }
 
     #[cfg(feature = "svg")]
