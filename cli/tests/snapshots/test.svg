@@ -1,109 +1,107 @@
-<!-- Created with term-transcript v0.2.0 (https://github.com/slowli/term-transcript) -->
+<!-- Created with term-transcript v0.4.0 (https://github.com/slowli/term-transcript) -->
 <svg viewBox="0 -22 720 384" width="720" height="384" xmlns="http://www.w3.org/2000/svg">
-  <style>
-    :root {
-      --black: #1c1c1c; --i-black: #666666;
-      --blue: #048ac7; --i-blue: #48c6ff;
-      --cyan: #0ac1cd; --i-cyan: #63e7f0;
-      --green: #cee318; --i-green: #ccff00;
-      --magenta: #833c9f; --i-magenta: #be67e1;
-      --red: #ff005b; --i-red: #ff00a0;
-      --white: #e5e5e5; --i-white: #f3f3f3;
-      --yellow: #ffe755; --i-yellow: #ff9f00;
-      --hl-black: rgba(255, 255, 255, 0.1);
-    }
-    .container {
-      padding: 0 10px;
-      color: var(--white);
-      line-height: 18px;
-    }
-    .container pre {
-      padding: 0;
-      margin: 0;
-      font: 14px SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace;
-      line-height: inherit;
-    }
-    .user-input {
-      margin: 0 -10px 6px;
-      color: var(--white);
-      background: var(--hl-black);
-      padding: 2px 10px;
-    }
-    .term-output { margin-bottom: 6px; }
-    .scrollbar { fill: rgba(255, 255, 255, 0.35); }
-    .bold,.prompt { font-weight: bold; }
-    .italic { font-style: italic; }
-    .underline { text-decoration: underline; }
-    .dimmed { opacity: 0.7; }
-    .hard-br {
-      position: relative;
-      margin-left: 5px;
-    }
-    .hard-br:before {
-      content: '↓';
-      font-size: 16px;
-      height: 16px;
-      position: absolute;
-      bottom: 0;
-      transform: rotate(45deg);
-      opacity: 0.8;
-    }
-    .fg0 { color: var(--black); } .bg0 { background: var(--black); }
-    .fg1 { color: var(--red); } .bg1 { background: var(--red); }
-    .fg2 { color: var(--green); } .bg2 { background: var(--green); }
-    .fg3 { color: var(--yellow); } .bg3 { background: var(--yellow); }
-    .fg4 { color: var(--blue); } .bg4 { background: var(--blue); }
-    .fg5 { color: var(--magenta); } .bg5 { background: var(--magenta); }
-    .fg6 { color: var(--cyan); } .bg6 { background: var(--cyan); }
-    .fg7 { color: var(--white); } .bg7 { background: var(--white); }
-    .fg8 { color: var(--i-black); } .bg8 { background: var(--i-black); }
-    .fg9 { color: var(--i-red); } .bg9 { background: var(--i-red); }
-    .fg10 { color: var(--i-green); } .bg10 { background: var(--i-green); }
-    .fg11 { color: var(--i-yellow); } .bg11 { background: var(--i-yellow); }
-    .fg12 { color: var(--i-blue); } .bg12 { background: var(--i-blue); }
-    .fg13 { color: var(--i-magenta); } .bg13 { background: var(--i-magenta); }
-    .fg14 { color: var(--i-cyan); } .bg14 { background: var(--i-cyan); }
-    .fg15 { color: var(--i-white); } .bg15 { background: var(--i-white); }
-  </style>
-  <rect width="100%" height="100%" y="-22" rx="4.5" style="fill: var(--black);" />
-  <rect width="100%" height="26" y="-22" clip-path="inset(0 0 -10 0 round 4.5)" style="fill: var(--hl-black);"/>
-  <circle cx="17" cy="-9" r="7" style="fill: var(--red);"/>
-  <circle cx="37" cy="-9" r="7" style="fill: var(--yellow);"/>
-  <circle cx="57" cy="-9" r="7" style="fill: var(--green);"/>
-  <svg x="0" y="10" width="720" height="342" viewBox="0 0 720 342">
-    <animate attributeName="viewBox" values="0 0 720 342;0 52 720 342;0 104 720 342;0 156 720 342" dur="12.0s" repeatCount="indefinite" calcMode="discrete" />
-    <foreignObject width="720" height="470">
-      <div xmlns="http://www.w3.org/1999/xhtml" class="container">
-        <div class="user-input" data-exit-status="0"><pre><span class="prompt">$</span> term-transcript exec -I 300ms -T 100ms rainbow.sh &gt; rainbow.svg
+  <switch>
+    <g requiredExtensions="http://www.w3.org/1999/xhtml">
+      <style>
+        .container {
+          padding: 0 10px;
+          color: #e5e5e5;
+          line-height: 18px;
+        }
+        .container pre {
+          padding: 0;
+          margin: 0;
+          font: 14px SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace;
+          line-height: inherit;
+        }
+        .input {
+          margin: 0 -10px 6px;
+          color: #e5e5e5;
+          background: rgba(255, 255, 255, 0.1);
+          padding: 2px 10px;
+        }
+        .input-hidden { display: none; }
+        .output { margin-bottom: 6px; }
+        .scrollbar { fill: #fff; fill-opacity: 0.35; }
+        .bold,.prompt { font-weight: bold; }
+        .italic { font-style: italic; }
+        .underline { text-decoration: underline; }
+        .dimmed { opacity: 0.7; }
+        .hard-br {
+          position: relative;
+          margin-left: 5px;
+        }
+        .hard-br:before {
+          content: '↓';
+          font-size: 16px;
+          height: 16px;
+          position: absolute;
+          bottom: 0;
+          transform: rotate(45deg);
+          opacity: 0.8;
+        }
+        .fg0 { color: #1c1c1c; } .bg0 { background: #1c1c1c; }
+        .fg1 { color: #ff005b; } .bg1 { background: #ff005b; }
+        .fg2 { color: #cee318; } .bg2 { background: #cee318; }
+        .fg3 { color: #ffe755; } .bg3 { background: #ffe755; }
+        .fg4 { color: #048ac7; } .bg4 { background: #048ac7; }
+        .fg5 { color: #833c9f; } .bg5 { background: #833c9f; }
+        .fg6 { color: #0ac1cd; } .bg6 { background: #0ac1cd; }
+        .fg7 { color: #e5e5e5; } .bg7 { background: #e5e5e5; }
+        .fg8 { color: #666666; } .bg8 { background: #666666; }
+        .fg9 { color: #ff00a0; } .bg9 { background: #ff00a0; }
+        .fg10 { color: #ccff00; } .bg10 { background: #ccff00; }
+        .fg11 { color: #ff9f00; } .bg11 { background: #ff9f00; }
+        .fg12 { color: #48c6ff; } .bg12 { background: #48c6ff; }
+        .fg13 { color: #be67e1; } .bg13 { background: #be67e1; }
+        .fg14 { color: #63e7f0; } .bg14 { background: #63e7f0; }
+        .fg15 { color: #f3f3f3; } .bg15 { background: #f3f3f3; }
+      </style>
+      <rect width="100%" height="100%" y="-22" rx="4.5" style="fill: #1c1c1c;" />
+      <rect width="100%" height="26" y="-22" clip-path="inset(0 0 -10 0 round 4.5)" style="fill: #fff; fill-opacity: 0.1;"/>
+      <circle cx="17" cy="-9" r="7" style="fill: #ff005b;"/>
+      <circle cx="37" cy="-9" r="7" style="fill: #ffe755;"/>
+      <circle cx="57" cy="-9" r="7" style="fill: #cee318;"/>
+      <svg x="0" y="10" width="720" height="342" viewBox="0 0 720 342">
+        <animate attributeName="viewBox" values="0 0 720 342;0 72 720 342;0 144 720 342;0 216 720 342;0 288 720 342;0 360 720 342;0 432 720 342;0 504 720 342;0 576 720 342;0 648 720 342;0 720 720 342;0 792 720 342;0 864 720 342;0 936 720 342;0 1008 720 342;0 1080 720 342;0 1152 720 342;0 1224 720 342;0 1296 720 342;0 1368 720 342;0 1440 720 342;0 1512 720 342;0 1584 720 342;0 1656 720 342;0 1728 720 342;0 1800 720 342;0 1872 720 342;0 1944 720 342;0 2016 720 342;0 2088 720 342;0 2160 720 342;0 2232 720 342;0 2304 720 342;0 2376 720 342;0 2448 720 342" dur="136.0s" repeatCount="indefinite" calcMode="discrete" />
+        <foreignObject width="720" height="2720">
+          <div xmlns="http://www.w3.org/1999/xhtml" class="container">
+            <div class="input" data-exit-status="0"><pre><span class="prompt">$</span> term-transcript exec -I 300ms -T 100ms rainbow.sh &gt; rainbow.svg
 # &#x60;-T&#x60; option defines the I/O timeout for the shell,
 # and &#x60;-I&#x60; specifies the additional initialization timeout</pre></div>
-        <div class="term-output"><pre></pre></div>
-        <div class="user-input" data-exit-status="0"><pre><span class="prompt">$</span> term-transcript test -I 300ms -T 100ms -v rainbow.svg
+            <div class="output"><pre></pre></div>
+            <div class="input" data-exit-status="0"><pre><span class="prompt">$</span> term-transcript test -I 300ms -T 100ms -v rainbow.svg
 # &#x60;-v&#x60; switches on verbose output</pre></div>
-        <div class="term-output"><pre>Testing file <span class="underline">rainbow.svg</span>...
+            <div class="output"><pre>Testing file <span class="underline">rainbow.svg</span>...
   [<span class="fg2">+</span>] Input: rainbow.sh
 <span style="color: #808080;">    Base colors:
-    black red green yellow blue magenta cyan white 
-    black red green yellow blue magenta cyan white 
+    \e[30m\e[4mblack\e[0m \e[31mred\e[0m \e[32m\e[4mgreen\e[0m \e[33myellow\e[0m<b class="hard-br"><br/></b> \e[34m\e[4mblue\e[0m \e[35mmagenta\e[0m \e[36m\e[4mcyan\e[0m \e[37mwhite\e[0m 
+    \e[90mblack\e[0m \e[91m\e[4mred\e[0m \e[92mgreen\e[0m \e[93m\e[4myellow\e[0m<b class="hard-br"><br/></b> \e[94mblue\e[0m \e[95m\e[4mmagenta\e[0m \e[96mcyan\e[0m \e[97m\e[4mwhite\e[0m 
     Base colors (bg):
-    black red green yellow blue magenta cyan white 
-    black red green yellow blue magenta cyan white 
+    \e[40mblack\e[0m \e[41mred\e[0m \e[42mgreen\e[0m \e[43myellow\e[0m \e[44mblu<b class="hard-br"><br/></b>e\e[0m \e[45mmagenta\e[0m \e[46mcyan\e[0m \e[47mwhite\e[0m 
+    \e[100mblack\e[0m \e[101mred\e[0m \e[102mgreen\e[0m \e[103myellow\e[0m \e[10<b class="hard-br"><br/></b>4mblue\e[0m \e[105mmagenta\e[0m \e[106mcyan\e[0m \e[107mwhite\e[0m 
     ANSI color palette:
-    !?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?
-    !?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?
-    !?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?
-    !?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?
-    !?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?
-    !?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?
+    \e[38;5;16m!\e[0m\e[37m\e[48;5;16m?\e[0m\e[38;5;17m!\e[0m\e[37m\e[48;5;17m?\<b class="hard-br"><br/></b>e[0m\e[38;5;18m!\e[0m\e[37m\e[48;5;18m?\e[0m\e[38;5;19m!\e[0m\e[37m\e[48;5;19m?\<b class="hard-br"><br/></b>e[0m\e[38;5;20m!\e[0m\e[37m\e[48;5;20m?\e[0m\e[38;5;21m!\e[0m\e[37m\e[48;5;21m?\<b class="hard-br"><br/></b>e[0m\e[38;5;22m!\e[0m\e[37m\e[48;5;22m?\e[0m\e[38;5;23m!\e[0m\e[37m\e[48;5;23m?\<b class="hard-br"><br/></b>e[0m\e[38;5;24m!\e[0m\e[37m\e[48;5;24m?\e[0m\e[38;5;25m!\e[0m\e[37m\e[48;5;25m?\<b class="hard-br"><br/></b>e[0m\e[38;5;26m!\e[0m\e[37m\e[48;5;26m?\e[0m\e[38;5;27m!\e[0m\e[37m\e[48;5;27m?\<b class="hard-br"><br/></b>e[0m\e[38;5;28m!\e[0m\e[37m\e[48;5;28m?\e[0m\e[38;5;29m!\e[0m\e[37m\e[48;5;29m?\<b class="hard-br"><br/></b>e[0m\e[38;5;30m!\e[0m\e[37m\e[48;5;30m?\e[0m\e[38;5;31m!\e[0m\e[37m\e[48;5;31m?\<b class="hard-br"><br/></b>e[0m\e[38;5;32m!\e[0m\e[37m\e[48;5;32m?\e[0m\e[38;5;33m!\e[0m\e[37m\e[48;5;33m?\<b class="hard-br"><br/></b>e[0m\e[38;5;34m!\e[0m\e[37m\e[48;5;34m?\e[0m\e[38;5;35m!\e[0m\e[30m\e[48;5;35m?\<b class="hard-br"><br/></b>e[0m\e[38;5;36m!\e[0m\e[30m\e[48;5;36m?\e[0m\e[38;5;37m!\e[0m\e[30m\e[48;5;37m?\<b class="hard-br"><br/></b>e[0m\e[38;5;38m!\e[0m\e[30m\e[48;5;38m?\e[0m\e[38;5;39m!\e[0m\e[30m\e[48;5;39m?\<b class="hard-br"><br/></b>e[0m\e[38;5;40m!\e[0m\e[30m\e[48;5;40m?\e[0m\e[38;5;41m!\e[0m\e[30m\e[48;5;41m?\<b class="hard-br"><br/></b>e[0m\e[38;5;42m!\e[0m\e[30m\e[48;5;42m?\e[0m\e[38;5;43m!\e[0m\e[30m\e[48;5;43m?\<b class="hard-br"><br/></b>e[0m\e[38;5;44m!\e[0m\e[30m\e[48;5;44m?\e[0m\e[38;5;45m!\e[0m\e[30m\e[48;5;45m?\<b class="hard-br"><br/></b>e[0m\e[38;5;46m!\e[0m\e[30m\e[48;5;46m?\e[0m\e[38;5;47m!\e[0m\e[30m\e[48;5;47m?\<b class="hard-br"><br/></b>e[0m\e[38;5;48m!\e[0m\e[30m\e[48;5;48m?\e[0m\e[38;5;49m!\e[0m\e[30m\e[48;5;49m?\<b class="hard-br"><br/></b>e[0m\e[38;5;50m!\e[0m\e[30m\e[48;5;50m?\e[0m\e[38;5;51m!\e[0m\e[30m\e[48;5;51m?\<b class="hard-br"><br/></b>e[0m
+    \e[38;5;52m!\e[0m\e[37m\e[48;5;52m?\e[0m\e[38;5;53m!\e[0m\e[37m\e[48;5;53m?\<b class="hard-br"><br/></b>e[0m\e[38;5;54m!\e[0m\e[37m\e[48;5;54m?\e[0m\e[38;5;55m!\e[0m\e[37m\e[48;5;55m?\<b class="hard-br"><br/></b>e[0m\e[38;5;56m!\e[0m\e[37m\e[48;5;56m?\e[0m\e[38;5;57m!\e[0m\e[37m\e[48;5;57m?\<b class="hard-br"><br/></b>e[0m\e[38;5;58m!\e[0m\e[37m\e[48;5;58m?\e[0m\e[38;5;59m!\e[0m\e[37m\e[48;5;59m?\<b class="hard-br"><br/></b>e[0m\e[38;5;60m!\e[0m\e[37m\e[48;5;60m?\e[0m\e[38;5;61m!\e[0m\e[37m\e[48;5;61m?\<b class="hard-br"><br/></b>e[0m\e[38;5;62m!\e[0m\e[37m\e[48;5;62m?\e[0m\e[38;5;63m!\e[0m\e[37m\e[48;5;63m?\<b class="hard-br"><br/></b>e[0m\e[38;5;64m!\e[0m\e[37m\e[48;5;64m?\e[0m\e[38;5;65m!\e[0m\e[37m\e[48;5;65m?\<b class="hard-br"><br/></b>e[0m\e[38;5;66m!\e[0m\e[37m\e[48;5;66m?\e[0m\e[38;5;67m!\e[0m\e[37m\e[48;5;67m?\<b class="hard-br"><br/></b>e[0m\e[38;5;68m!\e[0m\e[37m\e[48;5;68m?\e[0m\e[38;5;69m!\e[0m\e[37m\e[48;5;69m?\<b class="hard-br"><br/></b>e[0m\e[38;5;70m!\e[0m\e[37m\e[48;5;70m?\e[0m\e[38;5;71m!\e[0m\e[30m\e[48;5;71m?\<b class="hard-br"><br/></b>e[0m\e[38;5;72m!\e[0m\e[30m\e[48;5;72m?\e[0m\e[38;5;73m!\e[0m\e[30m\e[48;5;73m?\<b class="hard-br"><br/></b>e[0m\e[38;5;74m!\e[0m\e[30m\e[48;5;74m?\e[0m\e[38;5;75m!\e[0m\e[30m\e[48;5;75m?\<b class="hard-br"><br/></b>e[0m\e[38;5;76m!\e[0m\e[30m\e[48;5;76m?\e[0m\e[38;5;77m!\e[0m\e[30m\e[48;5;77m?\<b class="hard-br"><br/></b>e[0m\e[38;5;78m!\e[0m\e[30m\e[48;5;78m?\e[0m\e[38;5;79m!\e[0m\e[30m\e[48;5;79m?\<b class="hard-br"><br/></b>e[0m\e[38;5;80m!\e[0m\e[30m\e[48;5;80m?\e[0m\e[38;5;81m!\e[0m\e[30m\e[48;5;81m?\<b class="hard-br"><br/></b>e[0m\e[38;5;82m!\e[0m\e[30m\e[48;5;82m?\e[0m\e[38;5;83m!\e[0m\e[30m\e[48;5;83m?\<b class="hard-br"><br/></b>e[0m\e[38;5;84m!\e[0m\e[30m\e[48;5;84m?\e[0m\e[38;5;85m!\e[0m\e[30m\e[48;5;85m?\<b class="hard-br"><br/></b>e[0m\e[38;5;86m!\e[0m\e[30m\e[48;5;86m?\e[0m\e[38;5;87m!\e[0m\e[30m\e[48;5;87m?\<b class="hard-br"><br/></b>e[0m
+    \e[38;5;88m!\e[0m\e[37m\e[48;5;88m?\e[0m\e[38;5;89m!\e[0m\e[37m\e[48;5;89m?\<b class="hard-br"><br/></b>e[0m\e[38;5;90m!\e[0m\e[37m\e[48;5;90m?\e[0m\e[38;5;91m!\e[0m\e[37m\e[48;5;91m?\<b class="hard-br"><br/></b>e[0m\e[38;5;92m!\e[0m\e[37m\e[48;5;92m?\e[0m\e[38;5;93m!\e[0m\e[37m\e[48;5;93m?\<b class="hard-br"><br/></b>e[0m\e[38;5;94m!\e[0m\e[37m\e[48;5;94m?\e[0m\e[38;5;95m!\e[0m\e[37m\e[48;5;95m?\<b class="hard-br"><br/></b>e[0m\e[38;5;96m!\e[0m\e[37m\e[48;5;96m?\e[0m\e[38;5;97m!\e[0m\e[37m\e[48;5;97m?\<b class="hard-br"><br/></b>e[0m\e[38;5;98m!\e[0m\e[37m\e[48;5;98m?\e[0m\e[38;5;99m!\e[0m\e[37m\e[48;5;99m?\<b class="hard-br"><br/></b>e[0m\e[38;5;100m!\e[0m\e[37m\e[48;5;100m?\e[0m\e[38;5;101m!\e[0m\e[37m\e[48;5;10<b class="hard-br"><br/></b>1m?\e[0m\e[38;5;102m!\e[0m\e[37m\e[48;5;102m?\e[0m\e[38;5;103m!\e[0m\e[37m\e[48;<b class="hard-br"><br/></b>5;103m?\e[0m\e[38;5;104m!\e[0m\e[37m\e[48;5;104m?\e[0m\e[38;5;105m!\e[0m\e[37m\e<b class="hard-br"><br/></b>[48;5;105m?\e[0m\e[38;5;106m!\e[0m\e[37m\e[48;5;106m?\e[0m\e[38;5;107m!\e[0m\e[3<b class="hard-br"><br/></b>0m\e[48;5;107m?\e[0m\e[38;5;108m!\e[0m\e[30m\e[48;5;108m?\e[0m\e[38;5;109m!\e[0m<b class="hard-br"><br/></b>\e[30m\e[48;5;109m?\e[0m\e[38;5;110m!\e[0m\e[30m\e[48;5;110m?\e[0m\e[38;5;111m!\<b class="hard-br"><br/></b>e[0m\e[30m\e[48;5;111m?\e[0m\e[38;5;112m!\e[0m\e[30m\e[48;5;112m?\e[0m\e[38;5;11<b class="hard-br"><br/></b>3m!\e[0m\e[30m\e[48;5;113m?\e[0m\e[38;5;114m!\e[0m\e[30m\e[48;5;114m?\e[0m\e[38;<b class="hard-br"><br/></b>5;115m!\e[0m\e[30m\e[48;5;115m?\e[0m\e[38;5;116m!\e[0m\e[30m\e[48;5;116m?\e[0m\e<b class="hard-br"><br/></b>[38;5;117m!\e[0m\e[30m\e[48;5;117m?\e[0m\e[38;5;118m!\e[0m\e[30m\e[48;5;118m?\e[<b class="hard-br"><br/></b>0m\e[38;5;119m!\e[0m\e[30m\e[48;5;119m?\e[0m\e[38;5;120m!\e[0m\e[30m\e[48;5;120m<b class="hard-br"><br/></b>?\e[0m\e[38;5;121m!\e[0m\e[30m\e[48;5;121m?\e[0m\e[38;5;122m!\e[0m\e[30m\e[48;5;<b class="hard-br"><br/></b>122m?\e[0m\e[38;5;123m!\e[0m\e[30m\e[48;5;123m?\e[0m
+    \e[38;5;124m!\e[0m\e[37m\e[48;5;124m?\e[0m\e[38;5;125m!\e[0m\e[37m\e[48;5;12<b class="hard-br"><br/></b>5m?\e[0m\e[38;5;126m!\e[0m\e[37m\e[48;5;126m?\e[0m\e[38;5;127m!\e[0m\e[37m\e[48;<b class="hard-br"><br/></b>5;127m?\e[0m\e[38;5;128m!\e[0m\e[37m\e[48;5;128m?\e[0m\e[38;5;129m!\e[0m\e[37m\e<b class="hard-br"><br/></b>[48;5;129m?\e[0m\e[38;5;130m!\e[0m\e[37m\e[48;5;130m?\e[0m\e[38;5;131m!\e[0m\e[3<b class="hard-br"><br/></b>7m\e[48;5;131m?\e[0m\e[38;5;132m!\e[0m\e[37m\e[48;5;132m?\e[0m\e[38;5;133m!\e[0m<b class="hard-br"><br/></b>\e[37m\e[48;5;133m?\e[0m\e[38;5;134m!\e[0m\e[37m\e[48;5;134m?\e[0m\e[38;5;135m!\<b class="hard-br"><br/></b>e[0m\e[37m\e[48;5;135m?\e[0m\e[38;5;136m!\e[0m\e[37m\e[48;5;136m?\e[0m\e[38;5;13<b class="hard-br"><br/></b>7m!\e[0m\e[37m\e[48;5;137m?\e[0m\e[38;5;138m!\e[0m\e[37m\e[48;5;138m?\e[0m\e[38;<b class="hard-br"><br/></b>5;139m!\e[0m\e[37m\e[48;5;139m?\e[0m\e[38;5;140m!\e[0m\e[37m\e[48;5;140m?\e[0m\e<b class="hard-br"><br/></b>[38;5;141m!\e[0m\e[37m\e[48;5;141m?\e[0m\e[38;5;142m!\e[0m\e[37m\e[48;5;142m?\e[<b class="hard-br"><br/></b>0m\e[38;5;143m!\e[0m\e[30m\e[48;5;143m?\e[0m\e[38;5;144m!\e[0m\e[30m\e[48;5;144m<b class="hard-br"><br/></b>?\e[0m\e[38;5;145m!\e[0m\e[30m\e[48;5;145m?\e[0m\e[38;5;146m!\e[0m\e[30m\e[48;5;<b class="hard-br"><br/></b>146m?\e[0m\e[38;5;147m!\e[0m\e[30m\e[48;5;147m?\e[0m\e[38;5;148m!\e[0m\e[30m\e[4<b class="hard-br"><br/></b>8;5;148m?\e[0m\e[38;5;149m!\e[0m\e[30m\e[48;5;149m?\e[0m\e[38;5;150m!\e[0m\e[30m<b class="hard-br"><br/></b>\e[48;5;150m?\e[0m\e[38;5;151m!\e[0m\e[30m\e[48;5;151m?\e[0m\e[38;5;152m!\e[0m\e<b class="hard-br"><br/></b>[30m\e[48;5;152m?\e[0m\e[38;5;153m!\e[0m\e[30m\e[48;5;153m?\e[0m\e[38;5;154m!\e[<b class="hard-br"><br/></b>0m\e[30m\e[48;5;154m?\e[0m\e[38;5;155m!\e[0m\e[30m\e[48;5;155m?\e[0m\e[38;5;156m<b class="hard-br"><br/></b>!\e[0m\e[30m\e[48;5;156m?\e[0m\e[38;5;157m!\e[0m\e[30m\e[48;5;157m?\e[0m\e[38;5;<b class="hard-br"><br/></b>158m!\e[0m\e[30m\e[48;5;158m?\e[0m\e[38;5;159m!\e[0m\e[30m\e[48;5;159m?\e[0m
+    \e[38;5;160m!\e[0m\e[37m\e[48;5;160m?\e[0m\e[38;5;161m!\e[0m\e[37m\e[48;5;16<b class="hard-br"><br/></b>1m?\e[0m\e[38;5;162m!\e[0m\e[37m\e[48;5;162m?\e[0m\e[38;5;163m!\e[0m\e[37m\e[48;<b class="hard-br"><br/></b>5;163m?\e[0m\e[38;5;164m!\e[0m\e[37m\e[48;5;164m?\e[0m\e[38;5;165m!\e[0m\e[37m\e<b class="hard-br"><br/></b>[48;5;165m?\e[0m\e[38;5;166m!\e[0m\e[37m\e[48;5;166m?\e[0m\e[38;5;167m!\e[0m\e[3<b class="hard-br"><br/></b>7m\e[48;5;167m?\e[0m\e[38;5;168m!\e[0m\e[37m\e[48;5;168m?\e[0m\e[38;5;169m!\e[0m<b class="hard-br"><br/></b>\e[37m\e[48;5;169m?\e[0m\e[38;5;170m!\e[0m\e[37m\e[48;5;170m?\e[0m\e[38;5;171m!\<b class="hard-br"><br/></b>e[0m\e[37m\e[48;5;171m?\e[0m\e[38;5;172m!\e[0m\e[37m\e[48;5;172m?\e[0m\e[38;5;17<b class="hard-br"><br/></b>3m!\e[0m\e[37m\e[48;5;173m?\e[0m\e[38;5;174m!\e[0m\e[37m\e[48;5;174m?\e[0m\e[38;<b class="hard-br"><br/></b>5;175m!\e[0m\e[37m\e[48;5;175m?\e[0m\e[38;5;176m!\e[0m\e[37m\e[48;5;176m?\e[0m\e<b class="hard-br"><br/></b>[38;5;177m!\e[0m\e[37m\e[48;5;177m?\e[0m\e[38;5;178m!\e[0m\e[37m\e[48;5;178m?\e[<b class="hard-br"><br/></b>0m\e[38;5;179m!\e[0m\e[30m\e[48;5;179m?\e[0m\e[38;5;180m!\e[0m\e[30m\e[48;5;180m<b class="hard-br"><br/></b>?\e[0m\e[38;5;181m!\e[0m\e[30m\e[48;5;181m?\e[0m\e[38;5;182m!\e[0m\e[30m\e[48;5;<b class="hard-br"><br/></b>182m?\e[0m\e[38;5;183m!\e[0m\e[30m\e[48;5;183m?\e[0m\e[38;5;184m!\e[0m\e[30m\e[4<b class="hard-br"><br/></b>8;5;184m?\e[0m\e[38;5;185m!\e[0m\e[30m\e[48;5;185m?\e[0m\e[38;5;186m!\e[0m\e[30m<b class="hard-br"><br/></b>\e[48;5;186m?\e[0m\e[38;5;187m!\e[0m\e[30m\e[48;5;187m?\e[0m\e[38;5;188m!\e[0m\e<b class="hard-br"><br/></b>[30m\e[48;5;188m?\e[0m\e[38;5;189m!\e[0m\e[30m\e[48;5;189m?\e[0m\e[38;5;190m!\e[<b class="hard-br"><br/></b>0m\e[30m\e[48;5;190m?\e[0m\e[38;5;191m!\e[0m\e[30m\e[48;5;191m?\e[0m\e[38;5;192m<b class="hard-br"><br/></b>!\e[0m\e[30m\e[48;5;192m?\e[0m\e[38;5;193m!\e[0m\e[30m\e[48;5;193m?\e[0m\e[38;5;<b class="hard-br"><br/></b>194m!\e[0m\e[30m\e[48;5;194m?\e[0m\e[38;5;195m!\e[0m\e[30m\e[48;5;195m?\e[0m
+    \e[38;5;196m!\e[0m\e[37m\e[48;5;196m?\e[0m\e[38;5;197m!\e[0m\e[37m\e[48;5;19<b class="hard-br"><br/></b>7m?\e[0m\e[38;5;198m!\e[0m\e[37m\e[48;5;198m?\e[0m\e[38;5;199m!\e[0m\e[37m\e[48;<b class="hard-br"><br/></b>5;199m?\e[0m\e[38;5;200m!\e[0m\e[37m\e[48;5;200m?\e[0m\e[38;5;201m!\e[0m\e[37m\e<b class="hard-br"><br/></b>[48;5;201m?\e[0m\e[38;5;202m!\e[0m\e[37m\e[48;5;202m?\e[0m\e[38;5;203m!\e[0m\e[3<b class="hard-br"><br/></b>7m\e[48;5;203m?\e[0m\e[38;5;204m!\e[0m\e[37m\e[48;5;204m?\e[0m\e[38;5;205m!\e[0m<b class="hard-br"><br/></b>\e[37m\e[48;5;205m?\e[0m\e[38;5;206m!\e[0m\e[37m\e[48;5;206m?\e[0m\e[38;5;207m!\<b class="hard-br"><br/></b>e[0m\e[37m\e[48;5;207m?\e[0m\e[38;5;208m!\e[0m\e[37m\e[48;5;208m?\e[0m\e[38;5;20<b class="hard-br"><br/></b>9m!\e[0m\e[37m\e[48;5;209m?\e[0m\e[38;5;210m!\e[0m\e[37m\e[48;5;210m?\e[0m\e[38;<b class="hard-br"><br/></b>5;211m!\e[0m\e[37m\e[48;5;211m?\e[0m\e[38;5;212m!\e[0m\e[37m\e[48;5;212m?\e[0m\e<b class="hard-br"><br/></b>[38;5;213m!\e[0m\e[37m\e[48;5;213m?\e[0m\e[38;5;214m!\e[0m\e[37m\e[48;5;214m?\e[<b class="hard-br"><br/></b>0m\e[38;5;215m!\e[0m\e[30m\e[48;5;215m?\e[0m\e[38;5;216m!\e[0m\e[30m\e[48;5;216m<b class="hard-br"><br/></b>?\e[0m\e[38;5;217m!\e[0m\e[30m\e[48;5;217m?\e[0m\e[38;5;218m!\e[0m\e[30m\e[48;5;<b class="hard-br"><br/></b>218m?\e[0m\e[38;5;219m!\e[0m\e[30m\e[48;5;219m?\e[0m\e[38;5;220m!\e[0m\e[30m\e[4<b class="hard-br"><br/></b>8;5;220m?\e[0m\e[38;5;221m!\e[0m\e[30m\e[48;5;221m?\e[0m\e[38;5;222m!\e[0m\e[30m<b class="hard-br"><br/></b>\e[48;5;222m?\e[0m\e[38;5;223m!\e[0m\e[30m\e[48;5;223m?\e[0m\e[38;5;224m!\e[0m\e<b class="hard-br"><br/></b>[30m\e[48;5;224m?\e[0m\e[38;5;225m!\e[0m\e[30m\e[48;5;225m?\e[0m\e[38;5;226m!\e[<b class="hard-br"><br/></b>0m\e[30m\e[48;5;226m?\e[0m\e[38;5;227m!\e[0m\e[30m\e[48;5;227m?\e[0m\e[38;5;228m<b class="hard-br"><br/></b>!\e[0m\e[30m\e[48;5;228m?\e[0m\e[38;5;229m!\e[0m\e[30m\e[48;5;229m?\e[0m\e[38;5;<b class="hard-br"><br/></b>230m!\e[0m\e[30m\e[48;5;230m?\e[0m\e[38;5;231m!\e[0m\e[30m\e[48;5;231m?\e[0m
     ANSI grayscale palette:
-    !?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?
+    \e[38;5;232m!\e[0m\e[37m\e[48;5;232m?\e[0m\e[38;5;233m!\e[0m\e[37m\e[48;5;23<b class="hard-br"><br/></b>3m?\e[0m\e[38;5;234m!\e[0m\e[37m\e[48;5;234m?\e[0m\e[38;5;235m!\e[0m\e[37m\e[48;<b class="hard-br"><br/></b>5;235m?\e[0m\e[38;5;236m!\e[0m\e[37m\e[48;5;236m?\e[0m\e[38;5;237m!\e[0m\e[37m\e<b class="hard-br"><br/></b>[48;5;237m?\e[0m\e[38;5;238m!\e[0m\e[37m\e[48;5;238m?\e[0m\e[38;5;239m!\e[0m\e[3<b class="hard-br"><br/></b>7m\e[48;5;239m?\e[0m\e[38;5;240m!\e[0m\e[37m\e[48;5;240m?\e[0m\e[38;5;241m!\e[0m<b class="hard-br"><br/></b>\e[37m\e[48;5;241m?\e[0m\e[38;5;242m!\e[0m\e[37m\e[48;5;242m?\e[0m\e[38;5;243m!\<b class="hard-br"><br/></b>e[0m\e[37m\e[48;5;243m?\e[0m\e[38;5;244m!\e[0m\e[30m\e[48;5;244m?\e[0m\e[38;5;24<b class="hard-br"><br/></b>5m!\e[0m\e[30m\e[48;5;245m?\e[0m\e[38;5;246m!\e[0m\e[30m\e[48;5;246m?\e[0m\e[38;<b class="hard-br"><br/></b>5;247m!\e[0m\e[30m\e[48;5;247m?\e[0m\e[38;5;248m!\e[0m\e[30m\e[48;5;248m?\e[0m\e<b class="hard-br"><br/></b>[38;5;249m!\e[0m\e[30m\e[48;5;249m?\e[0m\e[38;5;250m!\e[0m\e[30m\e[48;5;250m?\e[<b class="hard-br"><br/></b>0m\e[38;5;251m!\e[0m\e[30m\e[48;5;251m?\e[0m\e[38;5;252m!\e[0m\e[30m\e[48;5;252m<b class="hard-br"><br/></b>?\e[0m\e[38;5;253m!\e[0m\e[30m\e[48;5;253m?\e[0m\e[38;5;254m!\e[0m\e[30m\e[48;5;<b class="hard-br"><br/></b>254m?\e[0m\e[38;5;255m!\e[0m\e[30m\e[48;5;255m?\e[0m
     24-bit colors:
-    pink orange brown teal 
+    \e[38;2;255;187;221mpink\e[0m \e[38;2;255;170;68morange\e[0m \e[38;2;159;64;<b class="hard-br"><br/></b>16mbrown\e[0m \e[38;2;16;136;159mteal\e[0m 
 </span>Totals: passed: <span class="fg2">1</span>, errors: <span class="fg1">0</span>, failures: <span class="fg3">0</span></pre></div>
-      </div>
-    </foreignObject>
-  </svg>
-  <rect class="scrollbar" x="713" y="10" width="5" height="40">
-    <animateTransform attributeName="transform" attributeType="XML" type="translate" values="0 0;0 100;0 201;0 302" dur="12.0s" repeatCount="indefinite" calcMode="discrete" />
-  </rect>
+          </div>
+        </foreignObject>
+      </svg>
+      <rect class="scrollbar" x="713" y="10" width="5" height="40">
+        <animateTransform attributeName="transform" attributeType="XML" type="translate" values="0 0;0 8;0 17;0 26;0 35;0 44;0 53;0 62;0 71;0 79;0 88;0 97;0 106;0 115;0 124;0 133;0 142;0 151;0 159;0 168;0 177;0 186;0 195;0 204;0 213;0 222;0 230;0 239;0 248;0 257;0 266;0 275;0 284;0 293;0 302" dur="136.0s" repeatCount="indefinite" calcMode="discrete" />
+      </rect>
+    </g>
+    <text x="10" y="18" style="font: 14px SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace; fill: #ff005b;">
+      HTML embedding not supported.
+      Consult <tspan style="text-decoration: underline; text-decoration-thickness: 1px;"><a href="https://github.com/slowli/term-transcript/blob/HEAD/FAQ.md">term-transcript docs</a></tspan> for details.
+    </text>
+  </switch>
 </svg>
